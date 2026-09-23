@@ -12,6 +12,8 @@ The reported `candidate_probabilities` can be useful as confidence-like scores, 
 >
 > only open-source 231 problems.
 
+Qwen3.8-27B
+
 | Rank | Model | Acc | P50 |
 | --- | --- | --- | --- |
 | 1 | DeepSeek V4.1 Flash | 97.84% | 1.501s |
@@ -32,13 +34,13 @@ The reported `candidate_probabilities` can be useful as confidence-like scores, 
 dejavu expects an OpenAI-compatible vLLM endpoint with reasoning output, structured outputs, and token log probabilities enabled. For a Qwen3 model, start vLLM with its reasoning parser:
 
 ```bash
-vllm serve Qwen/Qwen3-8B --reasoning-parser qwen3
+vllm serve Qwen3.8-27B --reasoning-parser qwen3
 ```
 
 ### 2. Start the API
 
 ```bash
-VLLM_MODEL=Qwen/Qwen3-8B \
+VLLM_MODEL=Qwen3.8-27B \
 VLLM_BASE_URL=http://127.0.0.1:8000/v1 \
 cargo run --release --bin dejavu-api
 ```
